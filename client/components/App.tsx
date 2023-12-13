@@ -1,26 +1,22 @@
-import { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../hooks'
-import { fetchFruits } from '../slices/fruits'
+import { useState } from 'react';
+import AddTodo from './AddTodo';
+import List from './List';
 
 function App() {
-  const fruits = useAppSelector((state) => state.fruits)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(fetchFruits())
-  }, [dispatch])
+  const [isListVisible, setListVisible] = useState(false);
+
+  function handleEnterPressed() {
+    setListVisible(true);
+  }
 
   return (
     <>
-      <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {fruits.map((fruit) => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
+      <header>
+        <AddTodo onEnterPressed={handleEnterPressed} />
+        {isListVisible && <List />}
+      </header>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

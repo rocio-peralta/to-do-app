@@ -1,6 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import fruits from './fruits'
 
-export default combineReducers({
-  fruits,
+import todos from './todos'
+
+export const rootReducer = combineReducers({
+ todos,
+  
 })
