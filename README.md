@@ -1,36 +1,32 @@
-# Boilerplate: Fullstack with Sass
+# TO DO APP
 
-## Setup
+## Description
 
-### What's included
+This project is a web application that uses Express.js to serve a single-page application and provide an API for managing todos.
 
-This repo includes:
+## Installation
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Jest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
-* a single client-side test (`client/components/App.test.js`)
+To install the project, follow these steps:
 
-### Installation
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd <project-directory>`
+3. Install the dependencies: `npm install`
 
-#### **From the Github UI**
+## Usage
 
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+To start the server, run: `npm start`
 
-#### **From the command line**
+The server will start on port 3000. You can access the application at `http://localhost:3000`.
 
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
+## API Endpoints
 
-You can find the server running on [http://localhost:3000](http://localhost:3000).
+- GET `/todos`: Fetches all todos.
+- POST `/todos`: Creates a new todo. The body of the request should be a JSON object with a `title` property.
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack-scss)
+## Contributing
+
+If you want to contribute to this project, please open an issue or a pull request.
+
+## License
+
+This project is licensed under the MIT License.
