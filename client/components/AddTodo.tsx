@@ -25,22 +25,21 @@ function AddTodo({ onEnterPressed }: AddTodoProps) {
     event.preventDefault()
     dispatch(postTodosThenFetch(todosList))
     onEnterPressed()
+    setTodosList({ todo: '' })
   }
 
   return (
     <>
-      <div className="has-text-centered">
-        <h1 className="is-size-1 has-text-weight-bold has-text-danger">
-          TODOS
-        </h1>
+      <div className="bg-slate-600">
+        <h1 className="text-red-600">TODOS</h1>
       </div>
 
-      <div className="container has-text-centered">
-        <div className="column is-half is-offset-one-quarter">
-          <div className="control">
+      <div className="">
+        <div className="">
+          <div className="">
             <form onSubmit={handleSubmit}>
               <div>
-                <label className="label" htmlFor="todo-input">
+                <label className="" htmlFor="todo-input">
                   What do you need to do?
                 </label>
               </div>

@@ -8,7 +8,7 @@ function List() {
 
   useEffect(() => {
     dispatch(fetchTodos())
-  }, [])
+  }, [dispatch])
 
   const handleDeleteTodo = (id: number) => {
     dispatch(deleteTodoThenFetch(id))
