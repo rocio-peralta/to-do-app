@@ -16,29 +16,24 @@ function List() {
   }
 
   return (
-    <div className="container has-text-centered ">
-      <div className="columns is-centered">
-        <div className="column is-two-fifths notification is-warning">
+   
+        <ul className="divide-y divide-gray-200 px-4">
           {todos.map((todo) => (
-            <div className="block" key={todo.id}>
-              <p
-                className="block"
-                style={{ display: 'inline-block', marginRight: '10px' }}
-              >
+            <li className="py-4" key={todo.id}>
+              <div className="flex items-center">
+                  <input id="todo1" name="todo1" type="checkbox"
+                    className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"></input>
+                <div className='ml-3 block text-gray-900 text-lg font-medium'>
                 {todo.todo}
-              </p>
-              <button
-                className="delete is-medium"
-                onClick={() => handleDeleteTodo(todo.id)}
-                style={{ display: 'inline-block' }}
-              >
-                x
-              </button>
-            </div>
+                </div>
+                <button
+                  className="h-4 w-4 text-teal-800 focus:ring-teal-500 border-gray-300 rounded"
+                  onClick={() => handleDeleteTodo(todo.id)}
+                  >x</button>
+              </div>
+            </li>
           ))}
-        </div>
-      </div>
-    </div>
+    </ul>
   )
 }
 

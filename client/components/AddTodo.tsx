@@ -30,32 +30,22 @@ function AddTodo({ onEnterPressed }: AddTodoProps) {
 
   return (
     <>
-      <div className="bg-slate-600">
-        <h1 className="text-red-600">TODOS</h1>
+      <div className="px-4 py-2">
+        <h1 className="text-gray-800 font-bold text-2xl uppercase">T0-DO LIST</h1>
       </div>
-
-      <div className="">
-        <div className="">
-          <div className="">
-            <form onSubmit={handleSubmit}>
-              <div>
-                <label className="" htmlFor="todo-input">
-                  What do you need to do?
-                </label>
-              </div>
+      <form onSubmit={handleSubmit} className='"w-full max-w-sm mx-auto px-4 py-2'>
+       <div className='flex items-center border-b-2 border-teal-500 py-2'>   
               <input
-                className="input"
+                className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                 type="text"
                 id="todo-input"
                 name="todo"
                 placeholder="Add your task"
                 value={todosList.todo}
                 onChange={handleChange}
-              />
-            </form>
-          </div>
-        </div>
-      </div>
+                />
+       </div>
+      </form>
     </>
   )
 }

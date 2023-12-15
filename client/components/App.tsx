@@ -11,12 +11,10 @@ function App() {
 
   return (
     <>
-      <header>
-        <div className="bg-slate-800 max-w-md mx-auto shadow-lg rounded-lg overflow-hidden mt-16">
+        <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
           <AddTodo onEnterPressed={handleEnterPressed} />
           {isListVisible && <List />}
         </div>
-      </header>
     </>
   )
 }
