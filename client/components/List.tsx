@@ -19,7 +19,7 @@ function List() {
       {todos.map((todo) => (
         <li className="py-4" key={todo.id}>
           <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox" className=""></input>
+            <input id="todo1" name="todo1" type="checkbox" ></input>
             <div className="ml-3 block text-gray-900 text-xl font-medium">
               {todo.todo}
             </div>

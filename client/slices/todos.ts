@@ -3,6 +3,7 @@ import {
   addTodos,
   deleteTodos,
   getTodos,
+  updateTodos,
 } from '../apis/api'
 import { Todo, TodoDraft } from '../../models/todos'
 
@@ -25,6 +26,15 @@ export const deleteTodoThenFetch = createAsyncThunk(
     return await getTodos()
   }
 )
+
+export const updateTodosThenFetch = createAsyncThunk(
+  'todos/updateTodosThenFetch', 
+  async ({ id, task }: { id: number, task: { todo: string } }) => {
+    await updateTodos(id, task);
+    return await getTodos();
+  }
+);
+
 const todosSlice = createSlice({
   name: 'todos',
   initialState: [] as Todo[],
@@ -34,6 +44,7 @@ const todosSlice = createSlice({
       .addCase(fetchTodos.fulfilled, (state, { payload }) => payload)
       .addCase(postTodosThenFetch.fulfilled, (state, { payload }) => payload)
       .addCase(deleteTodoThenFetch.fulfilled, (state, {payload}) => payload)
+      .addCase(updateTodosThenFetch.fulfilled, (state, {payload}) => payload)
       })
 
 
