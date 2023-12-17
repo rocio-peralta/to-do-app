@@ -30,7 +30,7 @@ export const deleteTodoThenFetch = createAsyncThunk(
 export const updateTodosThenFetch = createAsyncThunk(
   'todos/updateTodosThenFetch', 
   async ({ id, task }: { id: number, task: { todo: string } }) => {
-    await updateTodos(id, task);
+    await updateTodos( id, task );
     return await getTodos();
   }
 );

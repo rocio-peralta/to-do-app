@@ -7,5 +7,4 @@ export interface TodoDraft {
 export interface Todo extends TodoDraft {
   id: number
   todo: string
-  
 }
