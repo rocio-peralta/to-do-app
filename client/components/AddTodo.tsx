@@ -27,6 +27,7 @@ function AddTodo({ onEnterPressed }: AddTodoProps) {
     onEnterPressed()
     setTodosList({ todo: '' })
   }
+ 
 
   return (
     <>
@@ -50,6 +51,7 @@ function AddTodo({ onEnterPressed }: AddTodoProps) {
             onChange={handleChange}
           />
         </div>
+        
       </form>
     </>
   )

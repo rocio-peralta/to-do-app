@@ -20,7 +20,7 @@ function List() {
       {todos.map((todo) => (
         <li className="py-4" key={todo.id}>
           <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox"></input>
+            <input name="todo1" type="checkbox"></input>
             <div className="ml-3 block text-gray-900 text-xl font-medium">
               {todo.todo}
             </div>
@@ -46,13 +46,7 @@ function List() {
               </svg>
             </button>
 
-            <UpdateTodo
-              todoId={todo.id}
-              todoData={todo.todo}
-              onUpdate={function (): void {
-                throw new Error('Function not implemented.')
-              }}
-            />
+            <UpdateTodo todoId={todo.id} todoData={todo.todo} />
           </div>
         </li>
       ))}

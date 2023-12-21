@@ -5,11 +5,10 @@ import { useAppDispatch } from '../hooks'
 
 type UpdateProps = {
   todoId: number
-  onUpdate: () => void
   todoData: string
 }
 
-function UpdateTodo({ todoId, todoData, onUpdate: onUpdate }: UpdateProps) {
+function UpdateTodo({ todoId, todoData}: UpdateProps) {
   const dispatch = useAppDispatch()
   const [selectedTask, setSelectTask] = useState(false)
   const [updatedTask, setUpdatedTask] = useState({
@@ -22,7 +21,7 @@ function UpdateTodo({ todoId, todoData, onUpdate: onUpdate }: UpdateProps) {
 
   const handleSubmit = (id: number, task: { todo: string }) => {
     dispatch(updateTodosThenFetch({ id, task: { todo: task.todo } }))
-    onUpdate()
+  
   }
 
   return (
