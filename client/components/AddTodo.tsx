@@ -10,22 +10,17 @@ interface AddTodoProps {
 function AddTodo({ onEnterPressed }: AddTodoProps) {
   const dispatch = useAppDispatch()
 
-  const [todosList, setTodosList] = useState({
-    todo: '',
-  })
+  const [todo, setTodo] = useState('')
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setTodosList({
-      ...todosList,
-      [event.target.name]: event.target.value,
-    })
+    setTodo(event.target.value)
   }
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
-    dispatch(postTodosThenFetch(todosList))
+    dispatch(postTodosThenFetch({todo}))
     onEnterPressed()
-    setTodosList({ todo: '' })
+    setTodo('')
   }
  
 
@@ -47,7 +42,7 @@ function AddTodo({ onEnterPressed }: AddTodoProps) {
             id="todo-input"
             name="todo"
             placeholder="Add your task"
-            value={todosList.todo}
+            value={todo}
             onChange={handleChange}
           />
         </div>

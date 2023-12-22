@@ -15,9 +15,7 @@ function List() {
   const handleDeleteTodo = (id: number) => {
     dispatch(deleteTodoThenFetch(id))
   }
-  const handleEditClick = (id:number) => {
-    console.log("this is editingId:", editingId);
-    
+  const handleEditClick = (id: number) => {
     setEditingId(id)
   }
 
@@ -30,14 +28,11 @@ function List() {
       {todos.map((todo) => (
         <li className="py-4" key={todo.id}>
           <div className="flex items-center">
-            <input name="todo1" type="checkbox"></input>
+            <input name="chekcbox" type="checkbox"></input>
 
             <div>
-              {editingId === todo.id? (
+              {editingId === todo.id ? (
                 <UpdateTodo
-                  className={`ml-3 block text-gray-900 text-xl font-medium ${
-                    editingId === todo.id? 'bg-slate-400 border-blue-400' : 'bg-red-600'
-                  }`}
                   todoId={todo.id}
                   todoData={todo.todo}
                   onUpdate={handleUpdate}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import AddTodo from './AddTodo'
 import List from './List'
 import { fetchTodos } from '../slices/todos'
@@ -6,26 +6,26 @@ import { useAppDispatch } from '../hooks'
 
 function App() {
   const dispatch = useAppDispatch()
-  const [isListVisible, setListVisible] = useState(false)
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
-  function handleEnterPressed() {
-    setListVisible(true)
-  }
-  const handleFetchTodos = () => {
-    dispatch(fetchTodos())
-    setListVisible(true)
+  
+  const handleEnterPressed = useCallback(() => {
     setIsButtonVisible(false);
-  }
+  }, []);
+
+  const handleFetchTodos = useCallback(() => {
+    dispatch(fetchTodos())
+    setIsButtonVisible(false);
+  }, [dispatch]);
 
   return (
     <>
       <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
         <AddTodo onEnterPressed={handleEnterPressed} />
-        {isListVisible && <List />}
+        {!isButtonVisible && <List />}
         {isButtonVisible && (
         <button
-          onClick={() => handleFetchTodos()}
+          onClick={handleFetchTodos}
           type="button"
           className=" flex justify-end mr-5 mb-4 bg-teal-500 hover:bg-teal-600 rounded-lg  px-3 py-2 items-center ml-auto"
         >
