@@ -13,3 +13,8 @@ export function addTodos(task: TodoDraft, db = connection) {
 export function deleteTodos(id: number, db = connection) {
   return db('Todos').where({ 'id': id }).delete()
 }
+
+export function updateTodos(id: number, task: TodoDraft, db = connection) {
+  const { todo } = task
+  return db('Todos').where({ 'id': id }).update({ todo })
+}

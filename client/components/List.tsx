@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { fetchTodos, deleteTodoThenFetch } from '../slices/todos'
+import UpdateTodo from './UpdateTodo'
 
 function List() {
   const dispatch = useAppDispatch()
   const todos = useAppSelector((state) => state.todos)
+  const [editingId, setEditingId] = useState<number | null>(null)
 
   useEffect(() => {
     dispatch(fetchTodos())
@@ -13,16 +15,35 @@ function List() {
   const handleDeleteTodo = (id: number) => {
     dispatch(deleteTodoThenFetch(id))
   }
+  const handleEditClick = (id: number) => {
+    setEditingId(id)
+  }
+
+  const handleUpdate = () => {
+    setEditingId(null)
+  }
 
   return (
     <ul className="divide-y divide-gray-200 px-4">
       {todos.map((todo) => (
         <li className="py-4" key={todo.id}>
           <div className="flex items-center">
-            <input id="todo1" name="todo1" type="checkbox" className=""></input>
-            <div className="ml-3 block text-gray-900 text-xl font-medium">
-              {todo.todo}
+            <input name="chekcbox" type="checkbox"></input>
+
+            <div>
+              {editingId === todo.id ? (
+                <UpdateTodo
+                  todoId={todo.id}
+                  todoData={todo.todo}
+                  onUpdate={handleUpdate}
+                />
+              ) : (
+                <div className="z-0 ml-3 block text-gray-900 text-xl font-medium">
+                  {todo.todo}
+                </div>
+              )}
             </div>
+
             <button
               onClick={() => handleDeleteTodo(todo.id)}
               type="button"
@@ -46,8 +67,9 @@ function List() {
             </button>
 
             <button
+              onClick={() => handleEditClick(todo.id)}
               type="button"
-              className="text-white bg-gray-400 hover:bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+              className="text-white bg-teal-400 hover:bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
             >
               <svg
                 className="w-[19px] h-[19px] text--800 dark:text-white"

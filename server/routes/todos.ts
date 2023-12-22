@@ -42,5 +42,18 @@ router.delete('/:id', async (req, res) => {
     })
 })
 
+router.patch('/:id', async (req, res) => {
+  const id = req.params.id
+  const { todo } = req.body 
+
+  db.updateTodos(Number(id), { todo })
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((err: Error) => {
+      console.error(err)
+      res.status(500).json({ message: 'error in server' })
+    })
+})
 
 export default router
