@@ -34,7 +34,7 @@ function UpdateTodo({ todoId, todoData, onUpdate }: UpdateProps) {
         className="flex items-end"
       >
         <input
-          className="ml-3 block text-gray-900 text-xl font-medium "
+          className="ml-3 block text-gray-900 text-xl font-medium  border-slate-400 border-2 rounded-lg ml-2  py-2 items-center ml-auto"
           type="text"
           name="todo"
           onChange={(e) =>
