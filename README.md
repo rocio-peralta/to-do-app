@@ -1,27 +1,33 @@
-# TO DO APP
-
+# To- Do App
+![Todo](public/todofunction.gif)
 ## Description
 
-This project is a web application that uses Express.js to serve a single-page application and provide an API for managing todos.
+This is a full-stack To-Do app that allows users to perform CRUD (Create, Read, Update, Delete) operations on their tasks. The app is built using a variety of technologies for both the backend and frontend.
 
-## Installation
+## Backend
 
-To install the project, follow these steps:
+The backend of the app is powered by Express, Knex, and SQLite. Express is used as the web server framework, Knex as the SQL query builder, and SQLite as the database to store task information. 
 
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd <project-directory>`
-3. Install the dependencies: `npm install`
+### Setup 
+To set up the backend, follow these steps::
 
-## Usage
+1. Install dependencies: `npm install`
+2. Run migrations: `npm run knex migrate:latest`
+3. Start the server:: `npm run dev`
 
-To start the server, run: `npm start`
+The server will start on port 5173. You can access the application at `http://localhost:5173/`.
 
-The server will start on port 3000. You can access the application at `http://localhost:3000`.
+## Frontend
 
-## API Endpoints
+The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncThunk, and Tailwind CSS. Vite is used as the build tool, React for building user interfaces, Redux for state management, Redux Toolkit for simplifying Redux setup, Redux AsyncThunk for handling asynchronous actions, and Tailwind CSS for styling.
 
-- GET `/todos`: Fetches all todos.
-- POST `/todos`: Creates a new todo. The body of the request should be a JSON object with a `title` property.
+
+## Features
+
+- Create new tasks
+- Read and view existing tasks
+- Update task details
+- Delete tasks
 
 ## Contributing
 
@@ -30,3 +36,5 @@ If you want to contribute to this project, please open an issue or a pull reques
 ## License
 
 This project is licensed under the MIT License.
+
+[def]: /Users/rocioperalta/Desktop/Porfolio/to-do-app/public/todofunction.gif
