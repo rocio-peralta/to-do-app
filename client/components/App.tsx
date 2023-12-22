@@ -7,6 +7,7 @@ import { useAppDispatch } from '../hooks'
 function App() {
   const dispatch = useAppDispatch()
   const [isListVisible, setListVisible] = useState(false)
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
 
   function handleEnterPressed() {
     setListVisible(true)
@@ -14,6 +15,7 @@ function App() {
   const handleFetchTodos = () => {
     dispatch(fetchTodos())
     setListVisible(true)
+    setIsButtonVisible(false);
   }
 
   return (
@@ -21,6 +23,7 @@ function App() {
       <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
         <AddTodo onEnterPressed={handleEnterPressed} />
         {isListVisible && <List />}
+        {isButtonVisible && (
         <button
           onClick={() => handleFetchTodos()}
           type="button"
@@ -42,6 +45,7 @@ function App() {
             />
           </svg>
         </button>
+        )}
       </div>
     </>
   )

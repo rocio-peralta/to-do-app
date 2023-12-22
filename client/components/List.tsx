@@ -16,6 +16,8 @@ function List() {
     dispatch(deleteTodoThenFetch(id))
   }
   const handleEditClick = (id:number) => {
+    console.log("this is editingId:", editingId);
+    
     setEditingId(id)
   }
 
@@ -34,7 +36,7 @@ function List() {
               {editingId ? (
                 <UpdateTodo
                   className={`ml-3 block text-gray-900 text-xl font-medium ${
-                    editingId === todo.id ? 'bg-slate-400 border-blue-400' : ''
+                    editingId === todo.id? 'bg-slate-400 border-blue-400' : ''
                   }`}
                   todoId={todo.id}
                   todoData={todo.todo}
