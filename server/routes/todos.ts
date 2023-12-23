@@ -1,5 +1,6 @@
 import express = require('express')
 const router = express.Router()
+import { TodoDraftSchema } from '../../models/todos'
 
 import db = require('../db/db')
 
@@ -15,11 +16,12 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { todo } = req.body
+  const todo = req.body
+  const newTask = TodoDraftSchema.parse(todo)
 
-  db.addTodos({ todo })
+  db.addTodos(newTask)
     .then(() => {
-      // ignore ids from db function
+    
       res.sendStatus(201)
       return null
     })
@@ -44,9 +46,10 @@ router.delete('/:id', async (req, res) => {
 
 router.patch('/:id', async (req, res) => {
   const id = req.params.id
-  const { todo } = req.body 
+  const todo = req.body 
+  const updateTodo = TodoDraftSchema.parse(todo)
 
-  db.updateTodos(Number(id), { todo })
+  db.updateTodos(Number(id), updateTodo)
     .then(() => {
       res.sendStatus(200)
     })

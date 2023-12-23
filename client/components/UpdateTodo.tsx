@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { updateTodosThenFetch } from '../slices/todos'
-import { TodoDraft } from '../../models/todos'
+import { TodoDraftSchema } from '../../models/todos'
 import { useAppDispatch } from '../hooks'
 
 type UpdateProps = {

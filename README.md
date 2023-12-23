@@ -6,7 +6,7 @@ This is a full-stack To-Do app that allows users to perform CRUD (Create, Read, 
 
 ## Backend
 
-The backend of the app is powered by Express, Knex, and SQLite. Express is used as the web server framework, Knex as the SQL query builder, and SQLite as the database to store task information. 
+The backend of the app is powered by Express, Knex, and SQLite. Express is used as the web server framework, Knex as the SQL query builder, and SQLite as the database to store task information. Zod is use to validate the data.
 
 ### Setup 
 To set up the backend, follow these steps::
@@ -19,8 +19,18 @@ The server will start on port 5173. You can access the application at `http://lo
 
 ## Frontend
 
-The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncThunk, and Tailwind CSS. Vite is used as the build tool, React for building user interfaces, Redux for state management, Redux Toolkit for simplifying Redux setup, Redux AsyncThunk for handling asynchronous actions, and Tailwind CSS for styling.
+The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncThunk, Typescript and Tailwind CSS. Vite is used as the build tool, React for building user interfaces, Redux for state management, Redux Toolkit for simplifying Redux setup, Redux AsyncThunk for handling asynchronous actions, and Tailwind CSS for styling.
 
+## Technologies
+- React
+- Typescript
+- Tailwind CSS
+- Redux toolkit
+- vite
+- Express
+- Knex
+- SQLite3
+- Zod
 
 ## Features
 

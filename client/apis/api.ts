@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import { Todo, TodoDraft } from '../../models/todos'
+import { Todo, TodoDraftSchema } from '../../models/todos'
 
 const url = '/api/v1/todos/'
 
@@ -14,7 +14,7 @@ export function addTodos(task: TodoDraft) {
 }
 
 export function deleteTodos(id: number) {
-  return request.delete(`${url}${id}`);
+  return request.delete(`${url}${id}`)
 }
 
 export function updateTodos(id: number, task: TodoDraft) {
