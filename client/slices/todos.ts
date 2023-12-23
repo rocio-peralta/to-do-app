@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { addTodos, deleteTodos, getTodos, updateTodos } from '../apis/api'
-import { Todo, TodoDraft } from '../../models/todos'
+import { Todo, TodoDraftSchema } from '../../models/todos'
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
   return await getTodos()

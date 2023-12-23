@@ -19,7 +19,7 @@ The server will start on port 5173. You can access the application at `http://lo
 
 ## Frontend
 
-The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncThunk, and Tailwind CSS. Vite is used as the build tool, React for building user interfaces, Redux for state management, Redux Toolkit for simplifying Redux setup, Redux AsyncThunk for handling asynchronous actions, and Tailwind CSS for styling.
+The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncThunk, Typescript and Tailwind CSS. Vite is used as the build tool, React for building user interfaces, Redux for state management, Redux Toolkit for simplifying Redux setup, Redux AsyncThunk for handling asynchronous actions, and Tailwind CSS for styling.
 
 
 ## Features
