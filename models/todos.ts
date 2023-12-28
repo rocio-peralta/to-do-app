@@ -1,10 +1,12 @@
+import * as z from 'zod'
+
 //frontend
-export interface TodoDraft {
-  todo: string
-}
+export const TodoDraftSchema = z.object({
+  todo: z.string(),
+})
 
 //backend
-export interface Todo extends TodoDraft {
-  id: number
-  todo: string
-}
+export const TodoSchema = TodoDraftSchema.extend({
+  id: z.number(),
+  todo:z.string()
+})
