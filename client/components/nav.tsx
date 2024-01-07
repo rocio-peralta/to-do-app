@@ -1,33 +1,42 @@
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
-import { NavGroup, NavButton } from './Styled'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function Nav() {
-  // TODO: call the useAuth0 hook and destructure user, logout, and loginWithRedirect
-  // TODO: replace placeholder user object with the one from auth0
-  const user = {
-    nickname: 'john.doe',
-  }
+  const { user, logout, loginWithRedirect } = useAuth0()
 
   const handleSignOut = () => {
-    console.log('sign out')
+    logout()
   }
 
   const handleSignIn = () => {
-    console.log('sign in')
+    loginWithRedirect()
   }
 
   return (
     <>
-      <NavGroup>
-        <IfAuthenticated>
-          <NavButton onClick={handleSignOut}>Sign out</NavButton>
-          {user && <p>Signed in as: {user?.nickname}</p>}
-        </IfAuthenticated>
-        <IfNotAuthenticated>
-          <NavButton onClick={handleSignIn}>Sign in</NavButton>
-        </IfNotAuthenticated>
-      </NavGroup>
-      <h1>Todo FTW!</h1>
+      <div className="grid justify-items-end mt-10">
+        <header>
+      
+            <IfAuthenticated>
+              <button
+                className="flex text-white bg-teal-500 hover:bg-teal-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={handleSignOut}
+              >
+                Sign out
+              </button>
+              {user && <p>Signed in as: {user?.nickname}</p>}
+            </IfAuthenticated>
+   
+          <IfNotAuthenticated>
+            <button
+              className="text-white bg-teal-500 hover:bg-teal-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              onClick={handleSignIn}
+            >
+              Sign in
+            </button>
+          </IfNotAuthenticated>
+        </header>
+      </div>
     </>
   )
 }
