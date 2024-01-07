@@ -24,7 +24,7 @@ function Nav() {
               >
                 Sign out
               </button>
-              {user && <p>Signed in as: {user?.nickname}</p>}
+              {user && <p className="z-0 ml-3 block text-gray-900 text-sm font-light">Signed in as: {user?.nickname}</p>}
             </IfAuthenticated>
    
           <IfNotAuthenticated>
