@@ -3,7 +3,10 @@ import AddTodo from './AddTodo'
 import List from './List'
 import { fetchTodos } from '../slices/todos'
 import { useAppDispatch } from '../hooks'
-import Nav from './Nav'
+import Nav from './nav'
+import React from 'react'
+
+
 
 function App() {
   const dispatch = useAppDispatch()
