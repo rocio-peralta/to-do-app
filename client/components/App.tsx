@@ -3,6 +3,7 @@ import AddTodo from './AddTodo'
 import List from './List'
 import { fetchTodos } from '../slices/todos'
 import { useAppDispatch } from '../hooks'
+import Nav from './Nav'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+      <Nav />
       <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
         <AddTodo onEnterPressed={handleEnterPressed} />
         {!isButtonVisible && <List />}

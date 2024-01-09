@@ -42,7 +42,11 @@ The frontend is developed using Vite, React, Redux, Redux Toolkit, Redux AsyncTh
 
 ## Contributing
 
-If you want to contribute to this project, please open an issue or a pull request.
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
 
 ## License
 
