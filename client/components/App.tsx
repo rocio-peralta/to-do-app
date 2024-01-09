@@ -3,7 +3,7 @@ import AddTodo from './AddTodo'
 import List from './List'
 import { fetchTodos } from '../slices/todos'
 import { useAppDispatch } from '../hooks'
-import Nav from './nav'
+import Nav from './Nav'
 
 function App() {
   const dispatch = useAppDispatch()
