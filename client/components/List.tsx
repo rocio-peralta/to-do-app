@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../hooks'
+
 import { fetchTodos, deleteTodoThenFetch } from '../slices/todos'
 import UpdateTodo from './UpdateTodo'
 
