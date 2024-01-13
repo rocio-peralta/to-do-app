@@ -4,7 +4,7 @@ import { fetchTodos, deleteTodoThenFetch } from '../slices/todos'
 import UpdateTodo from './UpdateTodo'
 
 function List() {
-  const dispatch = useAppDispatch()
+
   const todos = useAppSelector((state) => state.todos)
   const [editingId, setEditingId] = useState<number | null>(null)
 
